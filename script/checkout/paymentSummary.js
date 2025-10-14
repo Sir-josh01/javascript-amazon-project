@@ -13,6 +13,7 @@ export function renderPaymentSummary() {
 
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
     shippingPriceCents = deliveryOption.priceCents;
+    // console.log(shippingPriceCents);
 });
 
 const totalBeforeTaxCents = productPriceCents + shippingPriceCents;
@@ -42,6 +43,7 @@ const paymentSummaryHTML = `
     <div class="payment-summary-row">
       <div>Estimated tax (10%):</div>
       <div class="payment-summary-money">$${formatCurrency(totalTaxCents)}</div>
+      //there is nothing like tax-cents, come back when you have an error.
     </div>
 
     <div class="payment-summary-row total-row">
@@ -54,6 +56,6 @@ const paymentSummaryHTML = `
     </button>
 `;
 
-document.querySelector('.js-payment.summary')
+document.querySelector('.js-payment-summary')
   .innerHTML = paymentSummaryHTML;
 }
