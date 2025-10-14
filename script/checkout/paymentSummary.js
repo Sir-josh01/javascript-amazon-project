@@ -12,7 +12,7 @@ export function renderPaymentSummary() {
     productPriceCents += product.priceCents * cartItem.quantity;
 
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
-    shippingPriceCents = deliveryOption.priceCents;
+    shippingPriceCents += deliveryOption.priceCents;
     // console.log(shippingPriceCents);
 });
 
@@ -43,7 +43,6 @@ const paymentSummaryHTML = `
     <div class="payment-summary-row">
       <div>Estimated tax (10%):</div>
       <div class="payment-summary-money">$${formatCurrency(totalTaxCents)}</div>
-      //there is nothing like tax-cents, come back when you have an error.
     </div>
 
     <div class="payment-summary-row total-row">
